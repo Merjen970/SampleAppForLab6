@@ -1,4 +1,27 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+<!-- <p>This will be a signup page for new users.</p> -->
 
+<%= form_with model: @user, url: signup_path do |form| %>
+<div class="mb-3">
+	<%= form.label :Name %>
+	<%= form.text_field :name, class:"form-control", placeholder: "Aleksandre Dumas" %>
+</div><br/>
+<div class="mb-3">
+	<%= form.label :Email %>
+	<%= form.text_field :email, class:"form-control", placeholder: "AleksandreD@gmail.com" %>
+</div><br/>
+<div class="mb-3">
+	<%= form.label :Password %>
+	<%= form.password_field :password, class:"form-control", placeholder: "password" %>
+</div><br/>
+<div class="mb-3">
+	<%= form.label :Confirmation %>
+	<%= form.password_field :password_confirmation, class:"form-control", placeholder: "password" %>
+</div>
+<br/>
+
+<div class="mb-3">
+	<%= form.submit "Create my account" %>
+</div>
+  <% end %>
